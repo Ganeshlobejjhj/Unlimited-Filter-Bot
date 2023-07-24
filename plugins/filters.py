@@ -334,8 +334,10 @@ async def give_filter(client,message):
                 try:
                     if fileid == "None":
                         if btn == "[]":
-                            await message.reply_text(reply_text, disable_web_page_preview=True)
-                        else:
+                           l = await message.reply_text(reply_text, disable_web_page_preview=True)
+                        await asyncio.sleep(30)
+                        await l.delete()
+                    else:
                             button = eval(btn)
                             await message.reply_text(
                                 reply_text,
